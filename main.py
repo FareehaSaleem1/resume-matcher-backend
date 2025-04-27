@@ -15,10 +15,13 @@ from nltk.tokenize import sent_tokenize  # make sure this is imported
 
 app = FastAPI()
 
-origins = ["*"]
+origins = [
+    # "http://localhost:3000",  # For local testing
+    "resume-matcher-frontend-fofpln4pi-smawiyas-projects.vercel.app",  #  deployed frontend URL
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # match your React dev server
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
