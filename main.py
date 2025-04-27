@@ -15,9 +15,8 @@ from nltk.tokenize import sent_tokenize
 app = FastAPI()
 
 origins = [
-    "*",
-    "http://localhost:3000",
-    "https://vercel.com/smawiyas-projects/resume-matcher-frontend/AxSToUF5ULatqJkuteeZwrFdjDoS",
+    "http://localhost:3000",  # (development on local)
+    "https://resume-matcher-frontend-six.vercel.app"  # (your Vercel deployed frontend)
 ]
 
 app.add_middleware(
