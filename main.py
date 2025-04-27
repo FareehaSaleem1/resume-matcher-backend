@@ -9,16 +9,17 @@ nltk.download('punkt_tab')
 from nltk.tokenize import word_tokenize
 from fastapi.responses import JSONResponse
 import traceback
-from nltk.tokenize import sent_tokenize  # make sure this is imported
-
+from nltk.tokenize import sent_tokenize  
 
 
 app = FastAPI()
 
 origins = [
-    # "http://localhost:3000",  # For local testing
-    "resume-matcher-frontend-fofpln4pi-smawiyas-projects.vercel.app",  #  deployed frontend URL
+    "*",
+    "http://localhost:3000",
+    "https://resume-matcher-frontend-your-vercel-url.vercel.app",
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -26,6 +27,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Load embedding model
 model = SentenceTransformer('all-MiniLM-L6-v2')
