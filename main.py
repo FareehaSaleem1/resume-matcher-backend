@@ -17,7 +17,7 @@ app = FastAPI()
 origins = [
     "*",
     "http://localhost:3000",
-    "https://resume-matcher-frontend-six.vercel.app/",
+    "https://vercel.com/smawiyas-projects/resume-matcher-frontend/AxSToUF5ULatqJkuteeZwrFdjDoS",
 ]
 
 app.add_middleware(
